@@ -8,17 +8,27 @@ interface Post {
     body: String;
 }
 
+let test = 0;
+
 const getTest = async (req: Request, res: Response, next: NextFunction) => {
     console.log("getTest Running");
+    test += 1;
     return res.status(200).json({
-        message: "This is a get test"
+        message: "This is a get test",
+        number: test
     });
 }
 
 const postTest = async (req: Request, res: Response, next: NextFunction) => {
     console.log("postTest Running")
+
+    let number = parseInt(req.body.number);
+    console.log(req.body.number)
+    test = number
+
     return res.status(200).json({
-        message: "This is a post test"
+        message: "This is a post test",
+        number: test
     });
 }
 
