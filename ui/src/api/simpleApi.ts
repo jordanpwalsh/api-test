@@ -9,7 +9,7 @@ export const simpleApi = createApi({
     tagTypes: [
         "number"
     ],
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:6060/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:4001/' }),
     endpoints: (builder) => ({
         getTest: builder.query<string, void>({
             providesTags: ["number"],
